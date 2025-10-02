@@ -247,6 +247,7 @@ Private Function SanitizeObject() As String 'strPath As String, blnReturnHash As
     Dim intIndent As Integer
     Dim blnIsReport As Boolean
     Dim blnIsPassThroughQuery As Boolean
+    Dim blnIsForm As Boolean
     Dim curStart As Currency
     Dim cVBA As clsConcat
 
@@ -341,6 +342,12 @@ Private Function SanitizeObject() As String 'strPath As String, blnReturnHash As
                     ' Turn flag on to ignore Right and Bottom lines
                     blnIsReport = True
                     BeginBlock
+                
+                ' See if this file is from a form object
+                Case "Begin Form"
+                    ' Turn flag on to ignore Top,, Left, Right and Bottom lines
+                    blnIsForm = True
+                    BeginBlock
 
                 ' Beginning of main section
                 Case "Begin"
@@ -421,6 +428,20 @@ Private Function SanitizeObject() As String 'strPath As String, blnReturnHash As
                         ' Turn flag back off now that we have ignored these two lines.
                         SkipLine lngLine, eslStandard
                         blnIsReport = False
+                    ElseIf blnIsForm And (StartsWith(strLine, "    Left =") Then
+                        ' Ignore this line. (Not important, and frequently changes.)
+                        SkipLine lngLine, eslExtended
+                     ElseIf blnIsForm And (StartsWith(strLine, "    Top =") Then
+                        ' Ignore this line. (Not important, and frequently changes.)
+                        SkipLine lngLine, eslExtended
+                     ElseIf blnIsForm And (StartsWith(strLine, "    Right =") Then
+                        ' Ignore this line. (Not important, and frequently changes.)
+                        SkipLine lngLine, eslExtended
+                     ElseIf blnIsForm And (StartsWith(strLine, "    Bottom =") Then
+                        ' Ignore this line. (Not important, and frequently changes.)
+                        ' Turn flag back off now that we have ignored these two lines.
+                        SkipLine lngLine, eslExtended
+                        blnIsForm = False    
                     ElseIf StartsWith(strTLine, "WebImagePadding") Then
                         ' These values tend to drift between builds. See #423
                         SkipLine lngLine, eslStandard
