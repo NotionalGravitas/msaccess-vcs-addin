@@ -428,16 +428,16 @@ Private Function SanitizeObject() As String 'strPath As String, blnReturnHash As
                         ' Turn flag back off now that we have ignored these two lines.
                         SkipLine lngLine, eslStandard
                         blnIsReport = False
-                    ElseIf blnIsForm And (StartsWith(strLine, "    Left =") Then
+                    ElseIf blnIsForm And StartsWith(strLine, "    Left =") Then
                         ' Ignore this line. (Not important, and frequently changes.)
                         SkipLine lngLine, eslExtended
-                     ElseIf blnIsForm And (StartsWith(strLine, "    Top =") Then
+                     ElseIf blnIsForm And StartsWith(strLine, "    Top =") Then
                         ' Ignore this line. (Not important, and frequently changes.)
                         SkipLine lngLine, eslExtended
-                     ElseIf blnIsForm And (StartsWith(strLine, "    Right =") Then
+                     ElseIf blnIsForm And StartsWith(strLine, "    Right =") Then
                         ' Ignore this line. (Not important, and frequently changes.)
                         SkipLine lngLine, eslExtended
-                     ElseIf blnIsForm And (StartsWith(strLine, "    Bottom =") Then
+                     ElseIf blnIsForm And StartsWith(strLine, "    Bottom =") Then
                         ' Ignore this line. (Not important, and frequently changes.)
                         ' Turn flag back off now that we have ignored these two lines.
                         SkipLine lngLine, eslExtended
