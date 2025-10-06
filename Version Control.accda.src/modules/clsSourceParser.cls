@@ -342,7 +342,7 @@ Private Function SanitizeObject() As String 'strPath As String, blnReturnHash As
                     ' Turn flag on to ignore Right and Bottom lines
                     blnIsReport = True
                     BeginBlock
-                
+
                 ' See if this file is from a form object
                 Case "Begin Form"
                     ' Turn flag on to ignore Top,, Left, Right and Bottom lines
@@ -441,7 +441,7 @@ Private Function SanitizeObject() As String 'strPath As String, blnReturnHash As
                         ' Ignore this line. (Not important, and frequently changes.)
                         ' Turn flag back off now that we have ignored these two lines.
                         SkipLine lngLine, eslExtended
-                        blnIsForm = False    
+                        blnIsForm = False
                     ElseIf StartsWith(strTLine, "WebImagePadding") Then
                         ' These values tend to drift between builds. See #423
                         SkipLine lngLine, eslStandard
