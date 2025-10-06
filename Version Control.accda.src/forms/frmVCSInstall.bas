@@ -17,10 +17,6 @@ Begin Form
     GridY =24
     DatasheetFontHeight =11
     ItemSuffix =68
-    Left =32025
-    Top =2430
-    Right =-14191
-    Bottom =14895
     RecSrcDt = Begin
         0x79e78b777268e540
     End
@@ -779,7 +775,6 @@ Begin Form
                 End
                 Begin Tab
                     OverlapFlags =95
-                    TextFontFamily =18
                     Left =225
                     Top =1200
                     Width =6750
@@ -787,7 +782,6 @@ Begin Form
                     FontSize =8
                     TabIndex =3
                     Name ="tabInstallType"
-                    FontName ="Cambria"
 
                     LayoutCachedLeft =225
                     LayoutCachedTop =1200
@@ -816,13 +810,13 @@ Begin Form
                         Begin Page
                             OverlapFlags =87
                             Left =300
-                            Top =1590
+                            Top =1605
                             Width =6600
-                            Height =3015
+                            Height =3000
                             Name ="Page40"
                             Caption ="Basic Install"
                             LayoutCachedLeft =300
-                            LayoutCachedTop =1590
+                            LayoutCachedTop =1605
                             LayoutCachedWidth =6900
                             LayoutCachedHeight =4605
                             Begin
@@ -908,13 +902,13 @@ Begin Form
                         Begin Page
                             OverlapFlags =215
                             Left =300
-                            Top =1590
+                            Top =1605
                             Width =6600
-                            Height =3015
+                            Height =3000
                             Name ="Page41"
                             Caption ="Advanced Install"
                             LayoutCachedLeft =300
-                            LayoutCachedTop =1590
+                            LayoutCachedTop =1605
                             LayoutCachedWidth =6900
                             LayoutCachedHeight =4605
                             Begin
